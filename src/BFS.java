@@ -15,12 +15,13 @@ public class BFS {
         Pole pole = new Pole();
         queue.addFirst(pole);
         pozrene.add(pole);
+        System.out.println("Starting position:\n" + pole);
 
         while(!queue.isEmpty()){
             Pole tmp = queue.poll();
             if(tmp.jeReseni()){
-                System.out.println(tmp);
-                System.out.println(tmp.getPohyby());
+                //System.out.println(tmp);
+                System.out.println("Solution: " + tmp.getPohyby());
                 break;
             }
             for (int move : Arrays.asList(HORE, DOLE, DOPRAVA, DOLAVA)) {
