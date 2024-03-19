@@ -137,11 +137,11 @@ public class Pole implements Comparable<Pole>{
         int totalCost = 0;
 
         for (int i = 0; i < pole.length; i++) {
-            for (int j = 0; j < pole.length; j++) {
+            for (int j = 0; j < pole[i].length; j++) {
                 int value = pole[i][j];
                 if (value != 0) {
                     int targetX = (value - 1) / pole.length;
-                    int targetY = (value - 1) % pole.length;
+                    int targetY = (value - 1) % pole[i].length;
                     totalCost += Math.abs(i - targetX) + Math.abs(j - targetY);
                 }
             }
