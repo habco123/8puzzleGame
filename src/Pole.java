@@ -53,7 +53,7 @@ public class Pole implements Comparable<Pole>{
     for (int i = 0; i < pole.length * pole.length; i++) {
         int row1 = i / pole.length;
         int col1 = i % pole.length;
-        if (pole[row1][col1] != 0) { // Skip the empty tile
+        if (pole[row1][col1] != 0) {
             for (int j = i + 1; j < pole.length * pole.length; j++) {
                 int row2 = j / pole.length;
                 int col2 = j % pole.length;
@@ -147,7 +147,6 @@ public class Pole implements Comparable<Pole>{
                 }
             }
         }
-
         return totalCost;
     }
 
