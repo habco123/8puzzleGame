@@ -134,7 +134,6 @@ public class Pole implements Comparable<Pole>{
     }
 
     public int cost() {
-        int[][] goalState = {{1, 2, 3}, {4, 5, 6}, {7, 8, 0}};
         int totalCost = 0;
 
         for (int i = 0; i < pole.length; i++) {
@@ -149,5 +148,4 @@ public class Pole implements Comparable<Pole>{
         }
         return totalCost;
     }
-
 }
