@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.TreeSet;
 
 public class BFS {
     final int HORE = 1;
@@ -21,7 +22,7 @@ public class BFS {
             Pole tmp = queue.poll();
             if(tmp.jeReseni()){
                 //System.out.println(tmp);
-                System.out.println("Solution: " + tmp.getPohyby());
+                System.out.println("BFS Solution: " + tmp.getPohyby());
                 break;
             }
             for (int move : Arrays.asList(HORE, DOLE, DOPRAVA, DOLAVA)) {

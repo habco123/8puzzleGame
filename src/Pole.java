@@ -114,4 +114,23 @@ public class Pole implements Comparable<Pole>{
     public LinkedList<String> getPohyby() {
         return pohyby;
     }
+
+    public int cost() {
+        int[][] goalState = {{1, 2, 3}, {4, 5, 6}, {7, 8, 0}};
+        int totalCost = 0;
+
+        for (int i = 0; i < pole.length; i++) {
+            for (int j = 0; j < pole.length; j++) {
+                int value = pole[i][j];
+                if (value != 0) {
+                    int targetX = (value - 1) / pole.length;
+                    int targetY = (value - 1) % pole.length;
+                    totalCost += Math.abs(i - targetX) + Math.abs(j - targetY);
+                }
+            }
+        }
+
+        return totalCost;
+    }
+
 }
