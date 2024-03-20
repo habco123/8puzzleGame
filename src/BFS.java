@@ -21,8 +21,8 @@ public class BFS {
         while(!queue.isEmpty()){
             Pole tmp = queue.poll();
             if(tmp.jeReseni()){
-                //System.out.println(tmp);
                 System.out.println("BFS Solution: " + tmp.getPohyby());
+                //System.out.println("Velikost hashsetu: " + pozrene.size());
                 break;
             }
             for (int move : Arrays.asList(HORE, DOLE, DOPRAVA, DOLAVA)) {

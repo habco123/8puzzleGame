@@ -1,14 +1,20 @@
-import java.util.*;
 
 public class main {
 
     public static void main(String[] args) {
-        long startTime = System.currentTimeMillis();
-        //BFS solution = new BFS();
-        AStar astar = new AStar();
-        long endTime = System.currentTimeMillis();
-        long elapsedTime = endTime - startTime;
-        System.out.println("Runtime: " + elapsedTime + " milliseconds");
+        long startTime, endTime, elapsedTime;
+
+        startTime = System.currentTimeMillis();
+        BFS BDF_solution = new BFS();
+        endTime = System.currentTimeMillis();
+        elapsedTime = endTime - startTime;
+        System.out.println("BFS Runtime: " + elapsedTime + " milliseconds");
+
+        startTime = System.currentTimeMillis();
+        AStar astar_solution = new AStar();
+        endTime = System.currentTimeMillis();
+        elapsedTime = endTime - startTime;
+        System.out.println("A* Runtime: " + elapsedTime + " milliseconds");
 
     }
 }

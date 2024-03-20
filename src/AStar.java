@@ -23,6 +23,7 @@ public class AStar {
             Pole tmp = open.poll();
             if(tmp.jeReseni()){
                 System.out.println("A* Solution: " + tmp.getPohyby());
+                //System.out.println("Velikost hashsetu: " + pozrene.size());
                 break;
             }
             for(int move : Arrays.asList(HORE, DOLE, DOPRAVA, DOLAVA)){

@@ -15,7 +15,7 @@ public class Pole implements Comparable<Pole>{
     public void pohni(int move){
         switch(move){
             case HORE:
-                if(x <= 0){
+                if(x < 1){
                     return;
                 }
                 pole[x][y] = pole[x-1][y];
@@ -23,7 +23,7 @@ public class Pole implements Comparable<Pole>{
                 x--;
                 break;
             case DOLE:
-                if(x >= 2){
+                if(x > 1){
                     return;
                 }
                 pole[x][y] = pole[x+1][y];
@@ -31,7 +31,7 @@ public class Pole implements Comparable<Pole>{
                 x++;
                 break;
             case DOLAVA:
-                if(y <= 0){
+                if(y < 1){
                     return;
                 }
                 pole[x][y] = pole[x][y-1];
@@ -39,7 +39,7 @@ public class Pole implements Comparable<Pole>{
                 y--;
                 break;
             case DOPRAVA:
-                if(y >= 2){
+                if(y > 1){
                     return;
                 }
                 pole[x][y] = pole[x][y+1];
@@ -81,15 +81,16 @@ public class Pole implements Comparable<Pole>{
     }
     public Pole klonujAPohni(int move) {
         Pole copiedPole = new Pole();
+        copiedPole.pohyby.add(moveAsString(move));
+        copiedPole.pohyby.addAll(this.pohyby);
+        copiedPole.x = this.x;
+        copiedPole.y = this.y;
+
         for (int i = 0; i < pole.length; i++) {
             copiedPole.pole[i] = Arrays.copyOf(this.pole[i], this.pole[i].length);
         }
-        copiedPole.x = this.x;
-        copiedPole.y = this.y;
-        copiedPole.pohyby.addAll(this.pohyby);
 
         copiedPole.pohni(move);
-        copiedPole.pohyby.add(moveAsString(move));
 
         return copiedPole;
     }
